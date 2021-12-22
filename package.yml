@@ -1,0 +1,12 @@
+---
+- name: This playbook is to install package
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: installing wget package
+    yum:
+      name: wget
+      state: absent
+      
+

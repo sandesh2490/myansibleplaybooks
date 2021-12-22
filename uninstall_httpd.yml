@@ -1,0 +1,17 @@
+---
+- name: This playbook is to install package
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Stopping httpd service
+    service:
+      name: httpd
+      state: stopped
+    notify: uninstalling httpd
+
+  handlers:
+  - name: uninstalling httpd
+    yum:
+      name: httpd
+      state: absent

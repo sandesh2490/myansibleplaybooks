@@ -1,0 +1,12 @@
+---
+- name: This playbook is to create users
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Creation file 
+    file:
+      path: /tmp/myfile
+      state: absent
+     
+

@@ -1,0 +1,15 @@
+---
+- name: This playbook is for checking veriable usibg user file
+  hosts: all
+  become: yes
+
+  vars_files:
+  - user.yml
+
+  tasks:
+  - name: creating user {{ user }}
+    user:
+      name: "{{ user }}"
+      state: absent
+      remove: yes
+

@@ -1,0 +1,13 @@
+---
+- name: This playbook is to create multiple directories  
+  hosts: all
+  tasks:
+  - name: Create multiple files
+    file: 
+      path: /tmp/ "{{ item }}"
+      state: absent
+    with_items:
+    - test01.txt
+    - test02.txt
+    - test03.txt
+    - test04.txt
